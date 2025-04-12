@@ -4,6 +4,20 @@
 <title>Shhhh...</title>
 </head>
 <body>
+  <script>
+    function getLocalStream() {
+    navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(function(stream) {
+            // Handle success: stream is now available
+            console.log("audio_grantSucsess");
+            // ... use the stream here, e.g., play it, record it, etc. ...
+        })
+        .catch(function(error) {
+            // Handle error: user denied permission or error occurred
+            console.error("Error: Audio grant failed. You find that datamining a public game site with its code on GitHub paid off.", error);
+        });
+    }
+  </script>
   <audio autoplay loop src="/files/audio/you_find_a_webpage_but_its_empty.mp3">
   Your browser does not support the audio element. Womp womp :(.
 </audio>
