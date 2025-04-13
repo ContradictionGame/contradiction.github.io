@@ -1,32 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <body>
-<div id="message" style="font-size: 24px; text-align: center; cursor: pointer; color: white;">
-  Click or press any key to continue...
-</div>
-
-<script>
-  const message = document.getElementById('message');
-  let interactionOccurred = false;
-
-  function handleInteraction() {
-    if (interactionOccurred) return; // Prevent multiple triggers
-    interactionOccurred = true;
-
-    // Play the audio and hide the message
-    const audio = new Audio('/files/audio/you_find_a_webpage_but_its_empty.mp3');
-    audio.loop = true;
-    audio.play().catch(error => {
-      console.error("Audio playback failed:", error);
-    });
-
-    message.style.display = 'none'; // Hide the message
-  }
-
-  // Listen for clicks or key presses
-  message.addEventListener("click", handleInteraction);
-  document.addEventListener("keydown", handleInteraction);
-</script>
 <p>Shhh... Not quite yet...</p>
+  <audio controls autoplay loop src="/files/audio/you_find_a_webpage_but_its_empty.mp3" type="audio/mpeg"></audio>
 </body>
 </html>
